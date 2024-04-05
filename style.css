@@ -1,0 +1,262 @@
+/* google font Pixelated */
+  @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap');
+
+/* Common styles for both light and dark themes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+/* =================================================================== SILDER + P ==================================================================================== */
+
+/* Toggle switch styles */
+.theme-switch {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.theme-switch p{
+  position: absolute;
+  left: 5600%;
+  top: 5px;
+  box-sizing: 150px;
+}
+.theme-switch span{
+  position: absolute;
+  left: 5800%;
+  top: 10px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.6s;
+  border-radius: 15px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  align-items: flex-start;
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #7e98ac;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.slider {
+  width: 41px;
+  height: 25px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+/* ==================================================================== LIGHT MODE ======================================================================================== */
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7fb;
+    column-gap: 7rem;
+}
+::selection {
+  color: #fff;
+  background-color: #625D5D;
+}
+.scoreboard {
+    width: 490px;
+    text-align: center;
+    font-size: 2rem;
+    color: #625D5D;
+    margin-top: 1.5rem;
+}
+
+.user_name{
+  margin-left: 0.01%;
+}
+
+.user_name {
+    position: absolute;
+    left: 600px;
+    top: 80px;
+}
+#user-score {
+    position: absolute;
+    left: 630px;
+    top: 120px;
+}
+.cpu_name {
+        position: absolute;
+        right: 625px;
+        top :80px;
+}
+#cpu-score {
+    position: absolute;
+    right: 643px;
+    top: 120px;
+}
+.container, .scoreboard {
+        padding: 2rem 7rem;
+        border-radius: 14px; 
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+
+.result_images img {
+  width: 100px;
+}
+.user_result img {
+  transform: rotate(90deg);
+}
+.user_result div{
+  margin: 25px;
+}
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+.cpu_result div{
+  margin: 25px;
+}
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: #625D5D;
+  margin-top: 1.5rem;
+}
+
+.option_image img {
+  width: 50px;
+}
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+.container.start .option_images {
+  pointer-events: none;
+}
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.option_image:hover {
+  opacity: 1;
+}
+.option_image.active {
+  opacity: 1;
+}
+.option_image img {
+  pointer-events: none;
+}
+.option_image p {
+  color: #3d3d3d;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background: #f6f7fb;
+  color: #333; /* Adjust text color for better contrast */
+}
+
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+/* ================================ SHAKE ANIMATIONS ================================ */
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* ================================================================ DARK MODE ================================================================ */
+
+body.dark-mode {
+  background: #333;
+  color: #f6f7fb; /* General text color for dark mode */
+}
+
+body.dark-mode .container,
+body.dark-mode .scoreboard{
+  background: #1a1a1a; /* Dark background for the container */
+  color: #f6f7fb; /* Text color for content inside the container */
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.07); /* Optional: light box shadow for contrast */
+}
+
+body.dark-mode .result, 
+body.dark-mode .option_image p,
+body.dark-mode .user_result p,
+body.dark-mode .cpu_result p {
+  color: #f6f7fb; /* Ensuring all text is visible in dark mode */
+}
+
+body.dark-mode .result, body.dark-mode .option_image p {
+  color: #f6f7fb;
+}
+
+/* ============================================================================================================================================ */

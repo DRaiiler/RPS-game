@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Mode Selection</title>
+    <link rel="stylesheet" href="mode.css" />
+</head>
+<body>
+    <div class="theme-switch">
+        <p>Toggle Theme:</p>
+
+        <label for="theme-toggle" class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="game-mode-selection">
+        <h2>Select Game Mode</h2>
+        <button class="game-mode-btn" data-mode="3">Best of 3</button>
+        <button class="game-mode-btn" data-mode="5">Best of 5</button>
+        <button class="game-mode-btn" data-mode="7">Best of 7</button>
+    </div>
+    <div>
+        <h1 class="username-display" > Enter your UserName here : </h1>
+        <input type="text" class="username" placeholder="Enter Username">   
+    </div>
+    <script src="mode.js" defer></script>
+</body>
+</html>

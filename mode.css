@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Pixelify Sans", sans-serif;
+}
+
+/* ================================================================== SLIDER + P ============================================================================================= */
+.theme-switch {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.theme-switch p{
+  position: absolute;
+  left: 5600% ;
+  top: 5px;
+  box-sizing: 100px;
+}
+.theme-switch span{
+  position: absolute;
+  left: 5800% ;
+  top: 10px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.6s;
+  border-radius: 15px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  align-items: flex-start;
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #7e98ac;
+}
+
+input:checked + .slider:before {
+  transform: translateX(17px);
+}
+
+/* Customize appearance */
+.slider {
+  width: 41px;
+  height: 25px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+.switch input {
+  display: none;
+}
+
+/* ============================================================================ LIGHT MODE ================================================================================ */
+
+div.game-mode-selection
+{
+  background: #ffffff; /* Dark background for the div */
+  color: #000000; /* Text color for content inside the div */
+  box-shadow: 0 5px 100px rgba(255, 255, 255, 0.07); 
+  border: solid rgb(0, 0, 0);
+  border-radius: 100px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f6f7fb;
+  column-gap: 7rem;
+}
+
+h1{
+  text-align: center;
+}
+
+input{
+  margin-top: 5%;
+  width: 600px ;
+  height: 40px ;
+  justify-content: center;
+  border: solid #7e98ac;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+input::selection {
+  display: none;
+}
+
+::selection {
+  color: #fff;
+  background-color: #625D5D;
+}
+
+.game-mode-selection {
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  button.game-mode-btn {
+    background-color: #a97d40;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    opacity: 0.7321;
+  }
+
+  button.game-mode-btn:hover{
+    opacity: 1;
+  }
+ 
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+/*============================================================================= DARK MODE =================================================================================*/
+body.dark-mode {
+  background: #333;
+  color: #f6f7fb; /* General text color for dark mode */
+}
+
+button.dark-mode .game-mode-btn {
+  background-color: #a97d40;
+  color: rgb(255, 255, 255); 
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+body.dark-mode .game-mode-selection {
+  background: #1a1a1a; /* Dark background for the container */
+  color: #f6f7fb; /* Text color for content inside the container */
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.07); /* Optional: light box shadow for contrast */
+}
+
+
+/* ===================================================================================================================================================== */
